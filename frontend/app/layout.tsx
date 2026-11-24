@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import Nav from "@/components/Nav";
-
+import "@fontsource-variable/manrope";
+import "@fontsource/noto-nastaliq-urdu/400.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,8 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <Nav />
-        <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
+        <div className="mx-auto max-w-[1520px] p-2 sm:p-4 lg:p-6">
+          <div className="rounded-[32px] bg-sage p-2.5 sm:p-3 lg:rounded-[40px]">{children}</div>
+        </div>
       </body>
     </html>
   );

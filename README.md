@@ -90,12 +90,14 @@ python scripts/try_messages.py --replies  # plus a drafted reply for each
 
 ## Dashboard
 
-A Next.js dashboard in `frontend/` for the support team:
+![Triage Desk dashboard](docs/dashboard.png)
 
-- **Inbox**: every ticket, urgent ones first, with status tabs, team filter and a form to simulate a customer message.
-- **Ticket**: the message (Urdu shown right to left), what the AI understood with its confidence, why the rules flagged it, review actions, the suggested reply with its FAQ sources, and the full audit trail.
-- **Review queue**: only the tickets a human must check.
-- **Analytics**: tickets by intent, language, team and status.
+A Next.js + Tailwind workspace in `frontend/` for the support team, one screen with three columns:
+
+- **Requests**: every ticket with status filters, urgent ones marked, and a live count of how many were handled without a human.
+- **Conversation**: the customer message (Urdu shown in Nastaliq, right to left), what the AI understood, why the rules flagged it, and the AI's suggested reply with the FAQ entries it used. Edit the draft and approve it in place.
+- **Decision**: the routing, AI confidence, review actions (approve, reroute, close) and the full audit trail.
+- **Analytics** (`/analytics`): tickets by intent, language, team and status.
 
 Run it in a second terminal while the API runs (needs Node 20+):
 

@@ -49,3 +49,39 @@ export function saveReviewer(name: string): void {
     /* storage may be unavailable; the name just will not be remembered */
   }
 }
+
+export const LANG_TEXT: Record<string, string> = {
+  english: "English",
+  urdu: "Urdu",
+  roman_urdu: "Roman Urdu",
+  mixed: "Mixed",
+  other: "Other",
+  unknown: "Not classified",
+};
+
+export const STATUS_TEXT: Record<string, string> = {
+  routed: "Routed",
+  needs_review: "Needs review",
+  needs_info: "Needs info",
+  closed: "Closed",
+};
+
+export const EVENT_TEXT: Record<string, string> = {
+  received: "Message received",
+  classified: "AI classified it",
+  routed: "Rules routed it",
+  flagged_for_review: "Sent for human review",
+  needs_info: "Asked for more info",
+  ai_failed: "AI could not classify",
+  review_approve: "Routing approved",
+  review_reroute: "Ticket rerouted",
+  review_close: "Ticket closed",
+  reply_drafted: "AI drafted a reply",
+  reply_approved: "Reply approved",
+};
+
+export function actorName(actor: string): string {
+  if (actor.startsWith("human:")) return actor.slice(6);
+  if (actor.startsWith("ai:")) return "AI";
+  return label(actor);
+}
