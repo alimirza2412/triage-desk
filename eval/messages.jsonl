@@ -1,0 +1,60 @@
+{"id": 1, "language": "english", "intent": "order_status", "message": "Hi, can you tell me the status of order 10234?"}
+{"id": 2, "language": "english", "intent": "order_status", "message": "Has my order 55102 been dispatched yet?"}
+{"id": 3, "language": "english", "intent": "delivery_issue", "message": "It has been 10 days and my parcel still hasn't arrived. Order 88231."}
+{"id": 4, "language": "english", "intent": "delivery_issue", "message": "The courier marked my order as delivered but I never received it. Order 77120."}
+{"id": 5, "language": "english", "intent": "refund_request", "message": "I want my money back for order 44521, the jacket doesn't fit and I don't want an exchange."}
+{"id": 6, "language": "english", "intent": "refund_request", "message": "Please refund me, the bag arrived with a broken zip. Order 30987."}
+{"id": 7, "language": "english", "intent": "return_exchange", "message": "Can I exchange my shirt for a medium? Order 66213."}
+{"id": 8, "language": "english", "intent": "return_exchange", "message": "How do I return a pair of jeans I bought last week?"}
+{"id": 9, "language": "english", "intent": "product_question", "message": "Is the white kurta available in XL?"}
+{"id": 10, "language": "english", "intent": "product_question", "message": "What fabric is the summer lawn suit made of?"}
+{"id": 11, "language": "english", "intent": "product_question", "message": "Do you have this sneaker in size 43?"}
+{"id": 12, "language": "english", "intent": "payment_issue", "message": "My card was charged twice for order 50321."}
+{"id": 13, "language": "english", "intent": "payment_issue", "message": "Payment failed but the money left my account. What now?"}
+{"id": 14, "language": "english", "intent": "complaint", "message": "Your customer service is terrible, nobody answers the phone."}
+{"id": 15, "language": "english", "intent": "complaint", "message": "Really disappointed with the quality, the colour faded after one wash."}
+{"id": 16, "language": "english", "intent": "other", "message": "Do you have a physical shop in Lahore?"}
+{"id": 17, "language": "english", "intent": "other", "message": "Thanks, the delivery was quick and the packaging was lovely!"}
+{"id": 18, "language": "english", "intent": "other", "message": "Are you hiring for warehouse staff?"}
+{"id": 19, "language": "english", "intent": "order_status", "message": "When will order 23109 be delivered? I need it by Friday."}
+{"id": 20, "language": "english", "intent": "payment_issue", "message": "Can I pay with JazzCash? It keeps failing at checkout."}
+{"id": 21, "language": "roman_urdu", "intent": "order_status", "message": "Mera order 41022 kahan tak pohancha hai?"}
+{"id": 22, "language": "roman_urdu", "intent": "order_status", "message": "Order 90871 dispatch ho gaya hai ya nahi?"}
+{"id": 23, "language": "roman_urdu", "intent": "delivery_issue", "message": "2 hafte ho gaye, order 61230 abhi tak nahi mila."}
+{"id": 24, "language": "roman_urdu", "intent": "delivery_issue", "message": "Rider ne delivered likh diya lekin parcel mujhe mila hi nahi. Order 71840"}
+{"id": 25, "language": "roman_urdu", "intent": "refund_request", "message": "Mujhe paise wapas chahiye, order 22104 ka size theek nahi aur exchange nahi karna."}
+{"id": 26, "language": "roman_urdu", "intent": "refund_request", "message": "Joota phata hua aaya hai, refund kar dein. Order 39012"}
+{"id": 27, "language": "roman_urdu", "intent": "return_exchange", "message": "Kya main shirt ka size badal sakta hoon? Large chahiye. Order 50117"}
+{"id": 28, "language": "roman_urdu", "intent": "return_exchange", "message": "Ye dress wapas karni hai, kaise karun?"}
+{"id": 29, "language": "roman_urdu", "intent": "product_question", "message": "Kya ye black hoodie medium size mein available hai?"}
+{"id": 30, "language": "roman_urdu", "intent": "product_question", "message": "Is suit ka kapra kaun sa hai?"}
+{"id": 31, "language": "roman_urdu", "intent": "product_question", "message": "Ye watch waterproof hai?"}
+{"id": 32, "language": "roman_urdu", "intent": "payment_issue", "message": "Card se do dafa paise kat gaye order 81200 ke liye."}
+{"id": 33, "language": "roman_urdu", "intent": "payment_issue", "message": "Payment cut ho gayi lekin order confirm nahi hua."}
+{"id": 34, "language": "roman_urdu", "intent": "complaint", "message": "Aap logon ki service bohat bekar hai, koi phone hi nahi uthata."}
+{"id": 35, "language": "roman_urdu", "intent": "complaint", "message": "Quality bohat ghatiya thi, ek dhulai mein rang utar gaya."}
+{"id": 36, "language": "roman_urdu", "intent": "other", "message": "Kya Lahore mein aap ki koi shop hai?"}
+{"id": 37, "language": "roman_urdu", "intent": "other", "message": "Shukriya, delivery bohat jaldi aa gayi!"}
+{"id": 38, "language": "roman_urdu", "intent": "other", "message": "Kya aap log job ke liye hiring kar rahe hain?"}
+{"id": 39, "language": "roman_urdu", "intent": "order_status", "message": "Order 33415 kab tak aayega? Juma tak chahiye."}
+{"id": 40, "language": "roman_urdu", "intent": "payment_issue", "message": "JazzCash se payment nahi ho rahi, har baar fail ho jati hai."}
+{"id": 41, "language": "urdu", "intent": "order_status", "message": "میرا آرڈر 41023 کہاں تک پہنچا ہے؟"}
+{"id": 42, "language": "urdu", "intent": "order_status", "message": "کیا آرڈر 90872 روانہ ہو گیا ہے؟"}
+{"id": 43, "language": "urdu", "intent": "delivery_issue", "message": "دو ہفتے ہو گئے، آرڈر 61231 ابھی تک نہیں ملا۔"}
+{"id": 44, "language": "urdu", "intent": "delivery_issue", "message": "رائیڈر نے ڈیلیور لکھ دیا لیکن پارسل مجھے نہیں ملا۔ آرڈر 71841"}
+{"id": 45, "language": "urdu", "intent": "refund_request", "message": "مجھے پیسے واپس چاہئیں، آرڈر 22105 کا سائز ٹھیک نہیں اور تبدیل نہیں کرنا۔"}
+{"id": 46, "language": "urdu", "intent": "refund_request", "message": "جوتا پھٹا ہوا آیا ہے، ریفنڈ کر دیں۔ آرڈر 39013"}
+{"id": 47, "language": "urdu", "intent": "return_exchange", "message": "کیا میں شرٹ کا سائز بدل سکتا ہوں؟ لارج چاہیے۔ آرڈر 50118"}
+{"id": 48, "language": "urdu", "intent": "return_exchange", "message": "یہ ڈریس واپس کرنی ہے، کیسے کروں؟"}
+{"id": 49, "language": "urdu", "intent": "product_question", "message": "کیا یہ کالی ہڈی میڈیم سائز میں دستیاب ہے؟"}
+{"id": 50, "language": "urdu", "intent": "product_question", "message": "اس سوٹ کا کپڑا کون سا ہے؟"}
+{"id": 51, "language": "urdu", "intent": "product_question", "message": "کیا یہ گھڑی واٹر پروف ہے؟"}
+{"id": 52, "language": "urdu", "intent": "payment_issue", "message": "کارڈ سے آرڈر 81201 کے لیے دو بار پیسے کٹ گئے۔"}
+{"id": 53, "language": "urdu", "intent": "payment_issue", "message": "پیمنٹ کٹ گئی لیکن آرڈر کنفرم نہیں ہوا۔"}
+{"id": 54, "language": "urdu", "intent": "complaint", "message": "آپ کی سروس بہت بری ہے، کوئی فون ہی نہیں اٹھاتا۔"}
+{"id": 55, "language": "urdu", "intent": "complaint", "message": "کوالٹی بہت خراب تھی، ایک دھلائی میں رنگ اتر گیا۔"}
+{"id": 56, "language": "urdu", "intent": "other", "message": "کیا لاہور میں آپ کی کوئی دکان ہے؟"}
+{"id": 57, "language": "urdu", "intent": "other", "message": "شکریہ، ڈیلیوری بہت جلدی آ گئی!"}
+{"id": 58, "language": "urdu", "intent": "other", "message": "کیا آپ ملازمت کے لیے بھرتی کر رہے ہیں؟"}
+{"id": 59, "language": "urdu", "intent": "order_status", "message": "آرڈر 33416 کب تک آئے گا؟ جمعہ تک چاہیے۔"}
+{"id": 60, "language": "urdu", "intent": "payment_issue", "message": "جاز کیش سے پیمنٹ نہیں ہو رہی، ہر بار ناکام ہو جاتی ہے۔"}

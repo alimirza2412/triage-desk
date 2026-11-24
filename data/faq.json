@@ -1,0 +1,110 @@
+[
+  {
+    "id": "shipping-time",
+    "question": "How long does delivery take?",
+    "answer": "Orders inside Pakistan are delivered in 3 to 5 working days. Karachi, Lahore and Islamabad usually get delivery in 2 to 3 working days.",
+    "keywords": "delivery days arrive when shipping time deliver"
+  },
+  {
+    "id": "shipping-cost",
+    "question": "How much is delivery?",
+    "answer": "Delivery is free on orders above Rs 3,000. Orders below Rs 3,000 have a flat delivery charge of Rs 250.",
+    "keywords": "delivery charges fee shipping cost free"
+  },
+  {
+    "id": "order-tracking",
+    "question": "How can I track my order?",
+    "answer": "Once your order is dispatched we send a tracking number by SMS and email. You can also share your order number with us and we will check the status for you.",
+    "keywords": "track tracking status where order dispatched"
+  },
+  {
+    "id": "order-late",
+    "question": "My order is late, what should I do?",
+    "answer": "If your order has not arrived within 7 working days, share your order number and we will check with the courier and update you within 24 hours.",
+    "keywords": "late delayed not arrived not received weeks waiting where order"
+  },
+  {
+    "id": "returns-window",
+    "question": "What is your return policy?",
+    "answer": "You can return unused items with tags within 14 days of delivery. Sale items cannot be returned but can be exchanged for a different size.",
+    "keywords": "return policy return item send back"
+  },
+  {
+    "id": "exchange-size",
+    "question": "Can I exchange for a different size?",
+    "answer": "Yes. Size exchanges are free within 14 days of delivery, subject to stock. Share your order number and the size you need.",
+    "keywords": "exchange size bigger smaller change size swap"
+  },
+  {
+    "id": "damaged-item",
+    "question": "I received a damaged or wrong item.",
+    "answer": "We are sorry about that. Please send photos of the item and your order number within 48 hours of delivery. We will arrange a free replacement or a refund after checking the photos.",
+    "keywords": "damaged broken defective wrong item torn faulty refund replacement"
+  },
+  {
+    "id": "refund-time",
+    "question": "How long does a refund take?",
+    "answer": "Approved refunds are processed within 5 to 7 working days to the original payment method. Cash on delivery orders are refunded by bank transfer.",
+    "keywords": "refund money back how long refund processed"
+  },
+  {
+    "id": "payment-methods",
+    "question": "Which payment methods do you accept?",
+    "answer": "We accept cash on delivery, debit and credit cards, JazzCash and Easypaisa.",
+    "keywords": "payment methods pay card jazzcash easypaisa"
+  },
+  {
+    "id": "payment-deducted",
+    "question": "Money was deducted but my order is not confirmed.",
+    "answer": "Sometimes a payment is deducted but the order does not confirm. The amount is usually reversed automatically within 3 to 5 working days. Share your order number or transaction ID and we will check it for you.",
+    "keywords": "payment deducted cut charged money taken not confirmed failed"
+  },
+  {
+    "id": "cod-available",
+    "question": "Is cash on delivery available?",
+    "answer": "Yes, cash on delivery is available across Pakistan for orders up to Rs 25,000.",
+    "keywords": "cash on delivery cod"
+  },
+  {
+    "id": "size-guide",
+    "question": "How do I choose the right size?",
+    "answer": "Each product page has a size chart in inches. If you are between two sizes, we suggest the larger one.",
+    "keywords": "size chart fit measurements which size"
+  },
+  {
+    "id": "stock-availability",
+    "question": "Is this product available in my size?",
+    "answer": "Available sizes are shown on the product page. If a size is out of stock, tap Notify Me and we will message you when it is back.",
+    "keywords": "available availability stock in stock size colour color"
+  },
+  {
+    "id": "cancel-order",
+    "question": "Can I cancel my order?",
+    "answer": "You can cancel an order before it is dispatched. Share your order number with us as soon as possible.",
+    "keywords": "cancel cancellation"
+  },
+  {
+    "id": "change-address",
+    "question": "Can I change my delivery address?",
+    "answer": "You can change the address before the order is dispatched. Share your order number and the new address.",
+    "keywords": "address change location"
+  },
+  {
+    "id": "international-shipping",
+    "question": "Do you ship outside Pakistan?",
+    "answer": "We currently ship to the UAE and Saudi Arabia. International delivery takes 7 to 10 working days and charges are shown at checkout.",
+    "keywords": "international uae dubai saudi abroad outside pakistan"
+  },
+  {
+    "id": "contact-hours",
+    "question": "When is customer support available?",
+    "answer": "Our support team replies Monday to Saturday, 10 am to 7 pm Pakistan time.",
+    "keywords": "support hours timing contact"
+  },
+  {
+    "id": "gift-wrap",
+    "question": "Do you offer gift wrapping?",
+    "answer": "Yes, gift wrapping is available at checkout for Rs 150 per order.",
+    "keywords": "gift wrap wrapping"
+  }
+]

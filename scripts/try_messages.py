@@ -3,6 +3,7 @@
 Usage (with the API running on port 8000):
     python scripts/try_messages.py
     python scripts/try_messages.py --base-url https://your-api.onrender.com
+    python scripts/try_messages.py --replies     # also draft a reply for each
 """
 from __future__ import annotations
 
@@ -28,6 +29,8 @@ SAMPLES = [
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--base-url", default="http://localhost:8000")
+    ap.add_argument("--replies", action="store_true",
+                    help="also ask the AI to draft a reply for each ticket")
     args = ap.parse_args()
     base = args.base_url.rstrip("/")
 
@@ -39,11 +42,21 @@ def main() -> None:
                 continue
             t = r.json()
             conf = f"{t['confidence']:.2f}" if t["confidence"] is not None else "-"
-            print(f"#{t['id']:<3} {t['status']:<13} {t['team']:<18} "
+            print(f"#{t['id']:<3} {t['status']:<13} {t['priority']:<7} {t['team']:<18} "
                   f"{t['intent'] or '-':<17} {t['language'] or '-':<11} conf={conf} "
                   f"flags={t['flags']}")
             print(f"     \"{msg[:70]}\"")
             time.sleep(1.5)  # stay under Groq's free-tier rate limit
+            if args.replies:
+                d = client.post(f"{base}/api/tickets/{t['id']}/suggest-reply")
+                if d.status_code == 200:
+                    dj = d.json()
+                    used = [s["id"] for s in dj["reply_sources"]]
+                    print(f"     reply (covered={dj['reply_covered']}, faq={used}):")
+                    print(f"       {dj['suggested_reply']}")
+                else:
+                    print(f"     reply ERROR {d.status_code}")
+                time.sleep(1.5)
 
 
 if __name__ == "__main__":

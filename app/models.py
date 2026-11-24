@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from sqlalchemy import JSON, DateTime, Float, ForeignKey, Integer, String, Text
+from sqlalchemy import JSON, Boolean, DateTime, Float, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .db import Base
@@ -38,8 +38,16 @@ class Ticket(Base):
 
     # What the rules decided
     team: Mapped[str] = mapped_column(String(40), default="General")
-    status: Mapped[str] = mapped_column(String(20), default="new")
+    status: Mapped[str] = mapped_column(String(20), default="new", index=True)
+    priority: Mapped[str] = mapped_column(String(10), default="normal", index=True)
     flags: Mapped[list] = mapped_column(JSON, default=list)
+
+    # Suggested reply (drafted on request, approved by a human)
+    reply_status: Mapped[str] = mapped_column(String(20), default="none")
+    suggested_reply: Mapped[str | None] = mapped_column(Text, nullable=True)
+    reply_sources: Mapped[list] = mapped_column(JSON, default=list)
+    reply_covered: Mapped[bool | None] = mapped_column(Boolean, nullable=True)
+    final_reply: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     events: Mapped[list[AuditEvent]] = relationship(
         back_populates="ticket", order_by="AuditEvent.id", cascade="all, delete-orphan"

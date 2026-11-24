@@ -97,13 +97,28 @@ def test_refund_always_needs_human_approval(client):
     assert "refund_needs_approval" in body["flags"]
 
 
-def test_angry_urgent_message_is_escalated(client):
-    use(make(intent="delivery_issue", sentiment="negative", urgency="high",
-             order_id="7781"))
-    body = post(client, "3 hafte ho gaye, order abhi tak nahi aaya!").json()
-    assert body["team"] == "Escalations"
+def test_angry_urgent_keeps_owning_team_but_raises_priority(client):
+    # Found in the first real run: an upset customer must stay with the team
+    # that can fix the problem, not be moved to Escalations.
+    use(make(intent="payment_issue", sentiment="negative", urgency="high"))
+    body = post(client, "Payment cut ho gayi lekin order confirm nahi hua").json()
+    assert body["team"] == "Payments"
+    assert body["priority"] == "high"
     assert body["status"] == "needs_review"
     assert "angry_and_urgent" in body["flags"]
+
+
+def test_complaint_goes_to_escalations(client):
+    use(make(intent="complaint", sentiment="negative", urgency="medium"))
+    body = post(client, "Bohat bura experience tha").json()
+    assert body["team"] == "Escalations"
+
+
+def test_high_urgency_alone_raises_priority_without_review(client):
+    use(make(intent="product_question", urgency="high", sentiment="neutral"))
+    body = post(client, "Need to know today if this ships to Karachi").json()
+    assert body["priority"] == "high"
+    assert body["status"] == "routed"
 
 
 def test_order_status_without_order_id_asks_for_info(client):
@@ -175,6 +190,17 @@ def test_list_filters_by_status(client):
     assert [t["status"] for t in res.json()] == ["needs_review"]
 
 
+def test_list_puts_high_priority_first(client):
+    use(make())
+    post(client)
+    use(make(urgency="high"))
+    post(client)
+    use(make())
+    post(client)
+    tickets = client.get("/api/tickets").json()
+    assert tickets[0]["priority"] == "high"
+
+
 def test_missing_ticket_returns_404(client):
     assert client.get("/api/tickets/999").status_code == 404
 
@@ -188,3 +214,4 @@ def test_stats_count_tickets(client):
     assert s["total"] == 2
     assert s["by_status"] == {"routed": 1, "needs_review": 1}
     assert s["by_language"] == {"roman_urdu": 1, "urdu": 1}
+    assert s["by_priority"] == {"normal": 2}

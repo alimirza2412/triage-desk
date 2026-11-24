@@ -28,11 +28,15 @@ TEAMS: list[str] = sorted(set(TEAM_BY_INTENT.values()))
 class Decision:
     team: str
     status: str
+    priority: str = "normal"
     flags: list[str] = field(default_factory=list)
 
 
 def decide(c: Classification) -> Decision:
+    # The team always comes from the intent: the team that can actually fix the
+    # problem keeps the ticket, even when the customer is upset.
     team = TEAM_BY_INTENT[c.intent]
+    priority = "normal"
     flags: list[str] = []
 
     if c.confidence < config.REVIEW_CONFIDENCE_THRESHOLD:
@@ -43,8 +47,12 @@ def decide(c: Classification) -> Decision:
         flags.append("refund_needs_approval")
 
     if c.sentiment == "negative" and c.urgency == "high":
-        team = "Escalations"
+        # Raise priority and get a human to look, but do not move the ticket
+        # away from the team that owns the problem.
+        priority = "high"
         flags.append("angry_and_urgent")
+    elif c.urgency == "high":
+        priority = "high"
 
     if c.intent in {"order_status", "delivery_issue"} and not c.order_id:
         flags.append("missing_order_id")
@@ -57,4 +65,4 @@ def decide(c: Classification) -> Decision:
     else:
         status = "routed"
 
-    return Decision(team=team, status=status, flags=flags)
+    return Decision(team=team, status=status, priority=priority, flags=flags)

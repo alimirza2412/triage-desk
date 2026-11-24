@@ -16,6 +16,7 @@ Urgency = Literal["low", "medium", "high"]
 Sentiment = Literal["positive", "neutral", "negative"]
 Language = Literal["english", "urdu", "roman_urdu", "mixed", "other"]
 Status = Literal["routed", "needs_review", "needs_info", "closed"]
+Priority = Literal["normal", "high"]
 
 
 class Classification(BaseModel):
@@ -33,6 +34,14 @@ class Classification(BaseModel):
     @classmethod
     def blank_to_none(cls, v: str | None) -> str | None:
         return v.strip() or None if v else None
+
+
+class ReplyDraft(BaseModel):
+    """The AI's suggested reply. Checked again in code before it is accepted."""
+
+    reply: str = Field(min_length=1, max_length=1200)
+    used_faq_ids: list[str] = Field(default_factory=list)
+    covered: bool
 
 
 class EnquiryIn(BaseModel):
@@ -76,11 +85,29 @@ class TicketOut(BaseModel):
     summary: str | None
     team: str
     status: str
+    priority: str
     flags: list[str]
+    reply_status: str
+
+
+class ReplySource(BaseModel):
+    id: str
+    question: str
+    answer: str
 
 
 class TicketDetail(TicketOut):
     events: list[AuditEventOut]
+    suggested_reply: str | None
+    reply_sources: list[ReplySource]
+    reply_covered: bool | None
+    final_reply: str | None
+
+
+class ApproveReplyIn(BaseModel):
+    reviewer: str = Field(min_length=1, max_length=80)
+    # The reviewer may edit the AI's draft before approving it.
+    final_text: str | None = Field(default=None, min_length=1, max_length=1200)
 
 
 class ReviewIn(BaseModel):
@@ -97,3 +124,4 @@ class Stats(BaseModel):
     by_intent: dict[str, int]
     by_language: dict[str, int]
     by_team: dict[str, int]
+    by_priority: dict[str, int]
