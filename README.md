@@ -88,6 +88,24 @@ python scripts/try_messages.py            # classification and routing
 python scripts/try_messages.py --replies  # plus a drafted reply for each
 ```
 
+## Dashboard
+
+A Next.js dashboard in `frontend/` for the support team:
+
+- **Inbox**: every ticket, urgent ones first, with status tabs, team filter and a form to simulate a customer message.
+- **Ticket**: the message (Urdu shown right to left), what the AI understood with its confidence, why the rules flagged it, review actions, the suggested reply with its FAQ sources, and the full audit trail.
+- **Review queue**: only the tickets a human must check.
+- **Analytics**: tickets by intent, language, team and status.
+
+Run it in a second terminal while the API runs (needs Node 20+):
+
+```bash
+cd frontend
+npm install
+cp .env.example .env.local    # NEXT_PUBLIC_API_URL, default http://localhost:8000
+npm run dev                   # http://localhost:3000
+```
+
 ## Eval
 
 `eval/messages.jsonl` holds 60 labelled messages: 20 English, 20 Roman Urdu and
@@ -136,5 +154,5 @@ and the database are replaced with fakes, so no API key or internet is needed.
 
 ## Stack
 
-FastAPI · SQLAlchemy 2 · Alembic · PostgreSQL (SQLite locally) · Groq · Pydantic · pytest ·
+FastAPI · Next.js · Tailwind · SQLAlchemy 2 · Alembic · PostgreSQL (SQLite locally) · Groq · Pydantic · pytest ·
 GitHub Actions
