@@ -1,0 +1,12 @@
+venv
+.venv
+.env
+*.db
+.git
+frontend
+tests
+eval
+scripts
+docs
+__pycache__
+.pytest_cache
