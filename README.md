@@ -5,8 +5,9 @@ Customer messages arrive in English, Urdu or Roman Urdu. Triage Desk reads each
 one, works out what the customer wants, routes it to the right team, and sends
 anything uncertain to a human, with a full audit trail of every decision.
 
-> Status: in active development. Backend, migrations, suggested replies and the
-> eval are done; the review dashboard and deployment are next.
+**Live demo:** [triage-desk-theta.vercel.app](https://triage-desk-theta.vercel.app) · **API docs:** [triage-desk-6zy8.onrender.com/docs](https://triage-desk-6zy8.onrender.com/docs)
+
+Free hosting: the API sleeps when idle, so the first load can take up to a minute.
 
 ## How a message is handled
 
@@ -153,6 +154,13 @@ python -m pytest -q
 36 tests, including one that builds the database from the migrations and
 guardrail tests for the reply drafter. The AI
 and the database are replaced with fakes, so no API key or internet is needed.
+
+## Deployment
+
+- **API:** Docker on Render. Migrations run on every start (`alembic upgrade head`).
+- **Database:** PostgreSQL on Neon.
+- **Dashboard:** Next.js on Vercel, with `NEXT_PUBLIC_API_URL` pointing at the API.
+- **CORS:** `CORS_ORIGINS` on the API is set to the dashboard's URL only.
 
 ## Stack
 
